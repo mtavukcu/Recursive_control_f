@@ -1,0 +1,24 @@
+{ "manifest_version": 2, "name": "Recursive Find",
+  "description": "Recursive Find is a new and improved take on your browser’s ctrl+f find functionality!
+Search the text of web pages, pdfs, and images on your current site, as well as on all pages and files that site links to, and on all pages and files those sites link to... and so on and so forth to a user specified limit.
+",
+  "version": "0.1",
+  "browser_action": {  "default_popup": "chrome/popup.html" },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+      "default": "Ctrl+Shift+F",
+      "mac": "MacCtrl+Shift+F"
+      }
+    }
+  },
+  "icons": {
+    "16": "chrome/icons/icon16.png",
+    "48": "chrome/icons/icon48.png",
+    "128": "chrome/icons/icon128.png"
+    }
+}

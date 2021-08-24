@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="popup_styles.css">
+  <script src="jquery.min.js"></script>
+  <script src="popup.js"></script>
+</head>
+
+<body>
+  <!-- Page Title -->
+  <h1 align="center"><i>Recursive</i> Find
+  <img src="icons/mag.png" alt="Magnifying Glass Icon" width="25" height="25">
+  </h1>
+    <!-- Divider for main search window -->
+    <div class="searchDivider">
+      <br>
+      <form name="filtersForm" id="filtersForm" class="filtersForm" action="localhost:8080/results" target="_blank" method="get">
+      <!-- Hidden input to store current url, to be passed along in form submission get request -->
+      <input type="hidden" value="" id="pageURL" name="pageURL" class="pageURL">
+      <input type="text" maxlength="40" id="searchText" name="searchText" class="searchText" placeholder="Text to search, press enter to submit" autofocus required>
+      <br>
+      <br>
+      <!-- sumbit button section -->
+      <section class="subButtonSection">
+        <button id="findButton" class="findButton">Find</button>
+      </section>
+      <!-- Filter button section -->
+      <section id = "filtersTextAndButtonSection" class = "filtersTextAndButtonSection">
+        <h3>
+          <button type= "button" class="showFiltersButtonAndText" id="showFiltersButtonAndText">
+            <img src = "icons/gearIcon.png" id="showFiltersButton" class="showFiltersButton" width="15" height="15">
+            <u class="showFiltersText" id ="showFiltersText">Show Filters</u>
+          </button>
+        </h3>
+      </section>
+      <!-- Help button section -->
+      <section class = "helpButtonSection">
+         <h3>
+           <button type= "button" class="helpButton" id="helpButton">
+             <b><u class="helpText" id ="helpText">Help ?</u></b>
+           </button>
+         </h3>
+      </section>
+      <br>
+      <br>
+      <br>
+    </div>
+
+    <!-- this break line appears and disapears along with the filter div -->
+    <div class="filterBreak" id="filterBreak">
+      <br>
+    </div>
+
+    <!-- Filter div, section for the filter form, hidden by default -->
+    <div class="filterDiv" id="filterDiv">
+        <br>
+        <!-- Recursion Depth filter, dropdown select, depth 2 selected by default-->
+        <label for="rDepth"> Recursion Depth </label>
+        <select id="rDepth" name="rDepth">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+
+        <br>
+
+        <!-- Result limit filter, dropdown select-->
+        <label for='resLimit'> Number of Results </label>
+        <select id="resLimit" name="resLimit">
+          <option value="0">No Limit</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+        </select>
+
+        <!-- Surrounding Characters filter, textbox limited input -->
+        <label for='sChars'> Surrounding Chars </label>
+        <input type="text" id="sChars" name="sChars" class="sChars" maxlength="3" value="100" placeholder="Default: 100">
+
+        <!-- Case sensitive filter, checkbox-->
+        <label for="cSensitive"> Case Sensitive </label>
+        <input type="checkbox" name="cSensitive" id="cSensitive"><br>
+
+        <!-- Whole words filter, checkbox -->
+        <label for="wholeWords"> Whole Words </label>
+        <input type="checkbox" name="wholeWords" id="wholeWords"><br>
+
+        <!-- Search images filter, checkbox -->
+        <label for="searchImages"> Search Images </label>
+        <input type="checkbox" name="searchImages" id="searchImages"><br>
+
+        <br>
+
+      </form>
+
+    </div>
+
+    <!-- this break line appears and disapears along with the helpPopup div -->
+    <div class="helpBreak" id="helpBreak">
+      <br>
+    </div>
+    <!-- Help popup div, displays instructions and explains filters -->
+    <div class="helpPopup" id="helpPopup">
+      <div class="helpPopupContent" id="helpPopupContent">
+        <b><u><h3 align="center">How To Use Recursive Find</h3></b></u>
+        <p align="center">(scroll to see more)</p>
+        <p>1. To get started, press 'ctrl+shift+f' (or click the magnifying glass icon) on the site where you would like to begin your search and begin typing in the search box.</p>
+        <p>2. If you would like more control over your search and how results are displayed, additional settings can be found by clicking the 'Show Filters' button.</p>
+        <p>3. Once you have entered your search term and (optionally) specified your filters, press enter (or click the find button below the search box) to begin your search and be redirected to a new tab displaying the results.</p>
+        <hr>
+        <b><u><h3 align="center">Filter Descriptions</h3></b></u>
+        <p><u>Recursion Depth: </u> <br>Specifies how many links deep to search for the given search term</p>
+        <p><u>Number of Results: </u> <br>Limits the number of results displayed</p>
+        <p><u>Surrounding Chars: </u> <br>Specifies how many characters surrounding the search term will be displayed in the preview window of the results page</p>
+        <p><u>Case Sensitive: </u> <br>When enabled, search will be case sensitive</p>
+        <p><u>Whole Words: </u> <br>When enabled, search term will be treated as whole word, results will only return exact matches</p>
+        <p><u>Search Images: </u> <br>When enabled, search will also include images (note: this may increase loading times)</p>
+      </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+html{
+  width: 250px;
+  min-height: 170px;
+  max-height: 550px;
+  /* border: 2px solid blue; */
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+
+body {
+  font-family: Product Sans;
+  background-image: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+  animation: gradient 25s ease infinite;
+  background-size: 400% 400%;
+  font-size: 13px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+label{
+  width: 120px;
+  display: inline-block;
+  text-align: left;
+  margin-left: 15px;
+}
+
+.findButton{
+  width: 150px;
+  border: none;
+  background-color: rgb(240,240,240);
+  padding: 3px 3px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.findButton:hover {
+  width: 160px;
+  background: white;
+}
+
+input.searchText{
+  width: 18em;
+  height: 2em;
+  font-size: 9pt;
+}
+
+input.sChars{
+  width: 6em;
+}
+
+.showFiltersButtonAndText {
+  text-align: left;
+  border: none;
+  background-color: inherit;
+  padding: 3px 3px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 110px;
+  border-radius: 5px;
+  /* display: inline-block; */
+}
+
+.showFiltersButtonAndText:hover {
+  background: #eee;
+}
+
+.helpButton {
+  border: none;
+  background-color: inherit;
+  padding: 3px 3px;
+  font-size: 14px;
+  cursor: pointer;
+  width: auto;
+  text-align: right;
+  border-radius: 5px;
+  /* display: inline-block; */
+}
+
+.helpButton:hover {
+  background: #eee;
+}
+
+.searchDivider{
+  text-align: center;
+  border-radius: 10px;
+  /* background-color: #B0C4DE; */
+  background: rgba(176,196,222, 0.4);
+  border: 1px solid black;
+  align: center;
+}
+
+
+.filtersTextAndButtonSection{
+  float: left;
+  margin-left: 15px;
+}
+
+.helpButtonSection {
+  float: right;
+  margin-right: 15px;
+}
+
+.helpPopup{
+  display: none;
+  background: rgba(176,196,222, 0.4);
+  border-radius: 10px;
+  border: 1px solid black;
+  text-align: left;
+  height: 180px;
+  overflow: scroll;
+}
+
+.helpPopupContent {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.helpBreak{
+  display:none;
+}
+
+.filterBreak{
+  display:none;
+}
+
+.filterDiv{
+  display: none;
+  background: rgba(176,196,222, 0.4);
+  border-radius: 10px;
+  border: 1px solid black;
+}
